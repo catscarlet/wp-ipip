@@ -31,7 +31,15 @@ function load_resources($hook_suffix)
 
 function wp_ipip($comment_text, $comment = null)
 {
-    $results = IP::find($comment->comment_author_IP);
+    try {
+        $results = IP::find($comment->comment_author_IP);
+    } catch (Exception $e) {
+        $location = 'WP-IPIP Caught exception: '.$e->getMessage();
+        originCommentTextOutput($comment_text);
+        echo '<div class="wp-ipip-test" display="none" commentid="'.$comment->comment_ID.'">地址: '.$location.'</div>';
+        return;
+    }
+
     $location = '';
     foreach ($results as $str) {
         if ($location == '') {
@@ -44,6 +52,12 @@ function wp_ipip($comment_text, $comment = null)
 
     $wpipip = '<div class="wp-ipip-test" display="none" commentid="'.$comment->comment_ID.'">地址: '.$location.'</div>';
 
+    originCommentTextOutput($comment_text);
+
+    echo $wpipip;
+}
+
+function originCommentTextOutput($comment_text) {
     if (function_exists('wpua_custom_output')) {
         echo '<div class="wp-useragent">';
         wpua_custom_output();
@@ -51,5 +65,4 @@ function wp_ipip($comment_text, $comment = null)
     }
 
     echo "<p>$comment_text</p>";
-    echo $wpipip;
 }
