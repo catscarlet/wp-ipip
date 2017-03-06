@@ -15,10 +15,10 @@ if (!function_exists('add_action')) {
 }
 
 if (is_admin()) {
-    add_action('admin_enqueue_scripts', 'load_resources');
+    add_action('admin_enqueue_scripts', 'load_wp_ipip_resources');
 };
 
-function load_resources($hook_suffix)
+function load_wp_ipip_resources($hook_suffix)
 {
     $h = print_r($hook_suffix, true);
     if ($hook_suffix == 'edit-comments.php') {
