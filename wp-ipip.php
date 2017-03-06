@@ -44,8 +44,7 @@ function wp_ipip($comment_text, $comment = null)
     foreach ($results as $str) {
         if ($location == '') {
             $location = $str;
-        }
-        if ($str != null) {
+        } else if ($str != null) {
             $location = $location.','.$str;
         }
     }
@@ -57,7 +56,8 @@ function wp_ipip($comment_text, $comment = null)
     echo $wpipip;
 }
 
-function originCommentTextOutput($comment_text) {
+function originCommentTextOutput($comment_text)
+{
     if (function_exists('wpua_custom_output')) {
         echo '<div class="wp-useragent">';
         wpua_custom_output();
