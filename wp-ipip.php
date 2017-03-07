@@ -10,7 +10,6 @@ Author URI: https://www.catscarlet.com
 */
 
 if (!function_exists('add_action')) {
-    echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
     exit;
 }
 
@@ -20,9 +19,8 @@ if (is_admin()) {
 
 function load_wp_ipip_resources($hook_suffix)
 {
-    $h = print_r($hook_suffix, true);
     if ($hook_suffix == 'edit-comments.php') {
-        wp_register_script('wp-ipip.js', plugin_dir_url(__FILE__).'js/wp-ipip.js?h='.$h, array('jquery'));
+        wp_register_script('wp-ipip.js', plugin_dir_url(__FILE__).'js/wp-ipip.js', array('jquery'));
         wp_enqueue_script('wp-ipip.js');
         include_once WP_PLUGIN_DIR.'/wp-ipip/17mon/php/IP.class.php';
         add_filter('comment_text', 'wp_ipip', 10, 2);
@@ -31,29 +29,39 @@ function load_wp_ipip_resources($hook_suffix)
 
 function wp_ipip($comment_text, $comment = null)
 {
+    if (!$comment) {
+        return $comment_text;
+    }
+
     try {
         $results = IP::find($comment->comment_author_IP);
-    } catch (Exception $e) {
-        $location = 'WP-IPIP Caught exception: '.$e->getMessage();
-        originCommentTextOutput($comment_text);
-        echo '<div class="wp-ipip-test" display="none" commentid="'.$comment->comment_ID.'">地址: '.$location.'</div>';
-        return;
+    } catch (Exception $wpwp_exception) {
+        $location = 'WP-IPIP Caught exception: '.$wpwp_exception->getMessage();
+        $wpipip_e = '<div class="wp-ipip-comment" display="none" id="wp_ipip_perfix_'.$comment->comment_ID.'" style="color:red">'.$location.'</div>';
+
+        echo $wpipip_e;
+
+        return $comment_text;
+    }
+
+    if ($results == 'N/A') {
+        return $comment_text;
     }
 
     $location = '';
     foreach ($results as $str) {
         if ($location == '') {
             $location = $str;
-        } else if ($str != null) {
+        } elseif ($str != null) {
             $location = $location.','.$str;
         }
     }
 
-    $wpipip = '<div class="wp-ipip-test" display="none" commentid="'.$comment->comment_ID.'">地址: '.$location.'</div>';
-
-    originCommentTextOutput($comment_text);
+    $wpipip = '<div class="wp-ipip-comment" display="none" id="wp_ipip_perfix_'.$comment->comment_ID.'">地址: '.$location.'</div>';
 
     echo $wpipip;
+
+    return $comment_text;
 }
 
 function originCommentTextOutput($comment_text)
