@@ -63,14 +63,3 @@ function wp_ipip($comment_text, $comment = null)
 
     return $comment_text;
 }
-
-function originCommentTextOutput($comment_text)
-{
-    if (function_exists('wpua_custom_output')) {
-        echo '<div class="wp-useragent">';
-        wpua_custom_output();
-        echo '</div>';
-    }
-
-    echo "<p>$comment_text</p>";
-}
