@@ -17,6 +17,13 @@ if (is_admin()) {
     add_action('admin_enqueue_scripts', 'load_wp_ipip_resources');
 };
 
+
+add_action('admin_menu', 'wpipip_add_option_page');
+function wpipip_add_option_page()
+{
+	add_options_page('WP-IPIP 设置页面', 'WP-IPIP 设置', 'manage_options', 'wp-ipip/wp-ipip-options.php');
+}
+
 function load_wp_ipip_resources($hook_suffix)
 {
     if ($hook_suffix == 'edit-comments.php') {
