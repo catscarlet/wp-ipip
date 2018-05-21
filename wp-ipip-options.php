@@ -1,13 +1,14 @@
 <?php
 
-$tplpath = WP_PLUGIN_DIR.'/wp-ipip/wp-ipip-options.html';
+$tpl_path = WP_PLUGIN_DIR.'/wp-ipip/wp-ipip-options.html';
 
-if (!is_readable($tplpath)) {
+if (!is_readable($tpl_path)) {
     echo 'Cannot read file wp-ipip-options.html at '.getcwd();
 
     return;
 }
-$tpl = file_get_contents($tplpath);
+
+$tpl = file_get_contents($tpl_path);
 
 $ipip_data_filepath = WP_PLUGIN_DIR.'/wp-ipip/17mon/php/17monipdb.dat';
 
