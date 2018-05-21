@@ -4,7 +4,7 @@
 Plugin Name: WP-IPIP
 Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
 Description: 根据评论IP地址定位物理地址，使用IPIP.net数据库。
-Version: 0.1.3
+Version: 0.2.0
 Author: Catscarlet
 Author URI: https://www.catscarlet.com
 */
@@ -29,7 +29,7 @@ function load_wp_ipip_resources($hook_suffix)
     if ('edit-comments.php' == $hook_suffix) {
         wp_register_script('wp-ipip.js', plugin_dir_url(__FILE__).'js/wp-ipip.js', array('jquery'));
         wp_enqueue_script('wp-ipip.js');
-        include_once WP_PLUGIN_DIR.'/wp-ipip/17mon/php/IP.class.php';
+        include_once WP_PLUGIN_DIR.'/wp-ipip/17mon/php/IP4datx.class.php';
         add_filter('comment_text', 'wp_ipip', 10, 2);
     }
 }
