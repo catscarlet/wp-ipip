@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+Support IPIP.net DATX database. DAT database is no longer supported.
+
 ## 0.1.3
 
 - Update IPIP database from 201707 to 201803.
