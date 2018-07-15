@@ -4,6 +4,24 @@
 
 全球 IPv4 地址归属地数据库(IPIP.NET 版)
 
+--- 2018 年 7 月引言 ---
+
+这是 IP 库的第二十一个公开版本。
+
+根据三月份的决定，本次开始将只提供 DATX 格式的数据。
+
+另外，目前正在制作 IPv6 的数据，由于目前的数据格式只考虑了 IPv4 的情况，所以有可能未来还会变更，提前说明一下。
+
+DATX 解析代码仓库地址：https://github.com/ipipnet/datx
+
+欢迎大家反馈。
+
+--
+高春辉
+Paul Gao
+gaochunhui@gmail.com
+http://www.ipip.net/
+
 --- 2018 年 3 月引言 ---
 
 这是 IP 库的第二十个公开版本。
