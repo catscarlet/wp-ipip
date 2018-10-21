@@ -79,3 +79,7 @@ IPIP 免费版精度支持到地级市。
 ## 链接
 
 IPIP官方解析代码-PHP：<https://github.com/17mon/php>
+
+## License
+
+Apache License
