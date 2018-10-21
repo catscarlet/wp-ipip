@@ -1,3 +1,5 @@
+**This branch is no longer maintained.**
+
 # WP-IPIP
 
 **WP-IPIP** 是一款根据 IP 显示评论来源地址的插件。插件使用 IPIP.net 免费版数据库。
