@@ -29,7 +29,7 @@ function load_wp_ipip_resources($hook_suffix)
     if ('edit-comments.php' == $hook_suffix) {
         wp_register_script('wp-ipip.js', plugin_dir_url(__FILE__).'js/wp-ipip.js', array('jquery'));
         wp_enqueue_script('wp-ipip.js');
-        include_once WP_PLUGIN_DIR.'/wp-ipip/17mon/php/IP4datx.class.php';
+        include_once WP_PLUGIN_DIR.'/wp-ipip/wp-ipip-ipdbloader.php';
         add_filter('comment_text', 'wp_ipip', 10, 2);
     }
 }
