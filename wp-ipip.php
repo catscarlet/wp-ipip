@@ -44,7 +44,7 @@ function wp_ipip($comment_text, $comment = null)
         $results = IP::find($comment->comment_author_IP);
     } catch (Exception $e) {
         $location = 'WP-IPIP Caught exception: '.$e->getMessage();
-        $wpipip_e = '<div class="wp-ipip-comment" id="wp-ipip-perfix-'.$comment->comment_ID.'" style="color:red">'.$location.'</div>';
+        $wpipip_e = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'" style="color:red">'.$location.'</div>';
 
         echo $wpipip_e;
 
@@ -61,9 +61,10 @@ function wp_ipip($comment_text, $comment = null)
             $location[] = $str;
         }
     }
+
     $info = implode(',', $location);
 
-    $wpipip = '<div class="wp-ipip-comment" id="wp-ipip-perfix-'.$comment->comment_ID.'"><a href="https://www.ipip.net/ip/'.$comment->comment_author_IP.'.html" ref="nofollow noreferrer" target="_blank" title="点击跳转到 IPIP.net 查看详情">地址: '.$info.'</a></div>';
+    $wpipip = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'"><a href="https://www.ipip.net/ip/'.$comment->comment_author_IP.'.html" ref="nofollow noreferrer" target="_blank" title="点击跳转到 IPIP.net 查看详情">地址: '.$info.'</a></div>';
 
     echo $wpipip;
 
