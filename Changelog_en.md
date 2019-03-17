@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0.0
+
+Support IPIP.ent IPDB database. DATX database is no longer supported.
+
+## 2.0.0
+
+Actually there literally nothing changed since 1.0.0
+
 ## 1.0.0
 
 Today I luckily found how to generate the url for querying IP-Geolocation on ipip.net. So this is the update for it.

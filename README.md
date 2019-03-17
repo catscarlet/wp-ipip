@@ -2,6 +2,14 @@
 
 **WP-IPIP** 是一款根据 IP 显示评论来源地址的插件。插件使用 IPIP.net 免费版数据库。
 
+![wp-ipip snapshot](snap.png "wp-ipip snapshot, works with akisment and wp-useragent")
+
+## 版本说明
+
+- 0.1 版本支持 DAT 数据库
+- 0.2 - 2.0.0 支持 DATAX 数据库
+- 3.0.0 支持 IPDB 数据库
+
 ## 安装
 
 ### 手动安装
@@ -10,21 +18,25 @@
 
 将文件复制到 WordPress 的插件目录下即可，文件应该在 `/wp-content/plugins/wp-ipip` 目录下。
 
-项目文件结构：
+项目主要文件结构：
 
 ```
+Wordpress
 └── wp-content
     └── plugins
         └── wp-ipip
-            ├── 17mon
-            │   └── php
-            │       ├── 17monipdb.datx
-            │       ├── IP4datx.class.php
-            │       └── readme.txt
-            ├── Changelog.md
+            ├── Changelog_en.md
+            ├── ipipdotnet
+            │   ├── ipdb-php
+            │   │   └── src
+            │   │       └── ipip
+            │   │           └── db
+            │   │               ├── City.php
+            │   │               └── Reader.php
+            │   └── ipipfree.ipdb
             ├── js
             │   └── wp-ipip.js
-            ├── README.md
+            ├── wp-ipip-ipdbloader.php
             ├── wp-ipip-options.html
             ├── wp-ipip-options.php
             └── wp-ipip.php
@@ -32,13 +44,9 @@
 
 ### IPIP数据库安装和更新
 
-IPIP 数据库文件路径：`{插件路径}/17mon/php/17monipdb.datx`，直接用新的数据库覆盖此文件即可。插件包中目前自带一份中文版数据库。
+IPIP 数据库文件路径：`{插件路径}/ipipdotnet/ipipfree.ipdb`，直接用新的数据库覆盖此文件即可。插件包中目前自带一份中文版数据库。
 
-你可以在IPIP的官网下载最新版的数据库：<https://www.ipip.net/download.html>
-
-**注意：根据 IPIP.net 2018 年 3 月 发布的数据库信息，未来的格式支持中不再支持 DAT 格式。**
-
-**所以从 0.2.0 版本开始，插件将仅支持 DATX 版本的数据库。对于英文版和一些有特殊情况而使用 DAT 格式的用户，请继续使用 0.1.X 版本。**
+你可以在 IPIP 的官网下载最新版的数据库：<https://www.ipip.net/download.html>
 
 ### 更新
 
@@ -46,15 +54,7 @@ IPIP 数据库文件路径：`{插件路径}/17mon/php/17monipdb.datx`，直接�
 
 ### 卸载
 
-插件未在 WordPress 上保存任何数据，所以可以直接删除。
-
-## 使用
-
-插件启用后，将会在评论页面将会在 IP 下显示其物理地址。点击此链接可以打开 IPIP.net 上关于此 IP 的详细信息。
-
-IPIP 免费版精度支持到地级市。
-
-本插件不支持 IPIP 收费版数据库。
+插件未在 WordPress 上保存任何数据，直接删除插件目录。
 
 ## 注意事项
 
@@ -70,15 +70,25 @@ IPIP 免费版精度支持到地级市。
 
 ### akisment
 
-与 akisment 兼容
+如果用户在评论时未填写网站，则插件产生的定位地址文字上会出现 akisment 原本用于移除 URL 的删除按钮，并且当鼠标悬浮在定位地址上时会出现对 IPIP.net 地址的预览。
+
+此问题正在解决中。
 
 ### wp-useragent
 
-与插件 wp-useragent 兼容
+与插件 wp-useragent 兼容。
+
+### 移动端
+
+移动端未测试。
+
+### 收费版
+
+IPIP 收费版数据库未经测试。
 
 ## 链接
 
-IPIP官方解析代码-PHP：<https://github.com/17mon/php>
+- IPIP, IPDB 格式官方解析代码：<https://github.com/ipipdotnet/ipdb-php>
 
 ## License
 
