@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1
+
+Fix a conflict with akisment.
+
 ## 3.0.0
 
 Support IPIP.ent IPDB database. DATX database is no longer supported.

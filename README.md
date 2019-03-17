@@ -8,7 +8,7 @@
 
 - 0.1 版本支持 DAT 数据库
 - 0.2 - 2.0.0 支持 DATAX 数据库
-- 3.0.0 支持 IPDB 数据库
+- 3.0.0+ 支持 IPDB 数据库
 
 ## 安装
 
@@ -54,7 +54,7 @@ IPIP 数据库文件路径：`{插件路径}/ipipdotnet/ipipfree.ipdb`，直接�
 
 ### 卸载
 
-插件未在 WordPress 上保存任何数据，直接删除插件目录。
+插件未在 WordPress 上保存任何数据，直接删除插件目录即可。
 
 ## 注意事项
 
@@ -70,9 +70,7 @@ IPIP 数据库文件路径：`{插件路径}/ipipdotnet/ipipfree.ipdb`，直接�
 
 ### akisment
 
-如果用户在评论时未填写网站，则插件产生的定位地址文字上会出现 akisment 原本用于移除 URL 的删除按钮，并且当鼠标悬浮在定位地址上时会出现对 IPIP.net 地址的预览。
-
-此问题正在解决中。
+与插件 akisment 兼容。
 
 ### wp-useragent
 
