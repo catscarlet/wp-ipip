@@ -5,8 +5,11 @@ jQuery(document).ready(
             'color': '#0073aa',
             'cursor': 'pointer',
         };
-        var style_on_hover = {
+        var style_on_mouseenter = {
             'color': '#00a0d2',
+        };
+        var style_on_mouseleave = {
+            'color': '#0073aa',
         };
 
         jQuery('.wp-ipip-link-span').each(function() {
@@ -16,7 +19,9 @@ jQuery(document).ready(
             jQuery(this).css(style);
 
             jQuery(this).hover(function() {
-                jQuery(this).css(style_on_hover);
+                jQuery(this).css(style_on_mouseenter);
+            }, function() {
+                jQuery(this).css(style_on_mouseleave);
             });
 
             jQuery(this).click(function() {
