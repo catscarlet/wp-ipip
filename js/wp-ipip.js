@@ -40,6 +40,7 @@ jQuery(document).ready(
         jQuery('.wp-ipip-comment').each(function() {
             var thisId = jQuery(this).attr('id').substr(15);
             jQuery('#comment-' + thisId + ' .author.column-author').append(jQuery('#wp-ipip-prefix-' + thisId));
+            jQuery('#comment-' + thisId + ' .comment-author').append(jQuery('#wp-ipip-mobile-prefix-' + thisId));
         });
     }
 );
