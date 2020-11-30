@@ -36,7 +36,7 @@ function load_wp_ipip_resources($hook_suffix)
 
 function wp_ipip($comment_text, $comment = null)
 {
-    if (!$comment) {
+    if (!$comment || !$comment_text) {
         return $comment_text;
     }
 
@@ -67,7 +67,8 @@ function wp_ipip($comment_text, $comment = null)
     $wpipip = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'"><span class="wp-ipip-link-span" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</snap></div>';
     $wpipip_mobile =  '<div class="wp-ipip-comment" id="wp-ipip-mobile-prefix-'.$comment->comment_ID.'"><span class="wp-ipip-link-span" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</snap></div>';
 
-    echo $wpipip.$wpipip_mobile;
+    //echo $wpipip.$wpipip_mobile;
 
-    return $comment_text;
+    return $wpipip.$wpipip_mobile.$comment_text;
+    //return $comment_text;
 }
