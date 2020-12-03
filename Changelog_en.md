@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.0.4
+
+Finally wp-useragent fixed it's output issue. I have wait this time for so 3 years, and sorry for the 2 months delays.
+
+- Fix compatibility issue with wp-useragent-1.1.8.
+- Hide ipip info before page load complete.
+
 ## 3.0.3
 
 - Update IPIP.net IPDB database to 2019-7.

@@ -4,7 +4,7 @@
 Plugin Name: WP-IPIP
 Plugin URI: https://github.com/catscarlet/wp-ipip
 Description: 根据评论 IP 地址定位物理地址，使用 IPIP.net 数据库。
-Version: 3.0.3
+Version: 3.0.4
 Author: 石樱灯笼
 Author URI: https://www.catscarlet.com
 */

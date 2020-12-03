@@ -6,8 +6,8 @@
 
 ## 版本说明
 
-- 0.1 版本支持 DAT 数据库
-- 0.2 - 2.0.0 支持 DATAX 数据库
+- 0.1 版本支持 DAT 数据库（停止维护）
+- 0.2 - 2.0.0 支持 DATAX 数据库（停止维护）
 - 3.0.0+ 支持 IPDB 数据库
 
 ## 安装与更新
@@ -62,7 +62,7 @@ IPIP 数据库文件路径：`{插件路径}/ipipdotnet/ipipfree.ipdb`，直接�
 
 ### 卸载
 
-插件未在 WordPress 上保存任何数据，直接删除插件目录即可。
+插件未在 WordPress 上保存任何额外文件或数据，使用 WordPress 的插件管理直接删除即可，亦可直接删除插件目录。
 
 ## 注意事项
 
@@ -74,21 +74,25 @@ IPIP 数据库文件路径：`{插件路径}/ipipdotnet/ipipfree.ipdb`，直接�
 
 ### PHP
 
-至少 PHP5.3 以上版本
+至少 PHP 5.4 以上版本（自3.0.4版本开始使用部分语法糖）
+
+### WordPress
+
+实测与 5.2.2 兼容
 
 ### akisment
 
-与插件 akisment 兼容。
+实测与插件 akisment 兼容
 
 ### wp-useragent
 
-与插件 wp-useragent 兼容。
+实测与插件 wp-useragent-1.1.8 兼容
 
 ### 移动端
 
-移动端于 v3.0.3 开始支持。
+移动端于 v3.0.3 开始支持
 
-### 收费版
+### IPIP 收费版
 
 IPIP 收费版数据库未经测试。
 
