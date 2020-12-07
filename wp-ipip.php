@@ -64,11 +64,10 @@ function wp_ipip($comment_text, $comment = null)
 
     $info = implode(',', $location);
 
-    $wpipip = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'" style="display: none;"><span class="wp-ipip-link-span" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</snap></div>';
-    $wpipip_mobile = '<div class="wp-ipip-comment" id="wp-ipip-mobile-prefix-'.$comment->comment_ID.'" style="display: none;"><span class="wp-ipip-link-span" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</snap></div>';
+    $wpipip = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'" style="display: none;"><a class="wp-ipip-link" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</a></div>';
 
-    //echo $wpipip.$wpipip_mobile;
+    $wpipip_mobile = '<div class="wp-ipip-comment" id="wp-ipip-mobile-prefix-'.$comment->comment_ID.'" style="display: none;"><a class="wp-ipip-link" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</a></div>';
+
 
     return $wpipip.$wpipip_mobile.$comment_text;
-    //return $comment_text;
 }
