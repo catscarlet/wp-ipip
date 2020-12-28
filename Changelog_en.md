@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.0
+
+You may get an unpredictable 403 Forbidden from IPIP.net, and any future request to IPIP.net will be blocked with mysterious reason. The entry is changed from 'window.open' to <a> link so that you can right-click and open it with Private-Browsing/Incognito-Mode.
+
+- Change from 'window.open' to <a> link.
+
 ## 3.0.4
 
 Finally wp-useragent fixed it's output issue. I have wait this time for so 3 years, and sorry for the 2 months delays.
