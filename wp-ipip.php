@@ -44,11 +44,12 @@ function wp_ipip($comment_text, $comment = null)
         $results = IP::find($comment->comment_author_IP);
     } catch (Exception $e) {
         $location = 'WP-IPIP Caught exception: '.$e->getMessage();
-        $wpipip_e = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'" style="color:red">'.$location.'</div><div class="wp-ipip-mobile-comment" id="wp-ipip-mobile-prefix-'.$comment->comment_ID.'" style="color:red">'.$location.'</div>';
 
-        echo $wpipip_e;
+        $wpipip_e = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'" style="display: none; color:red">'.$location.'</div>';
 
-        return $comment_text;
+        $wpipip_e_mobile = '<div class="wp-ipip-mobile-comment" id="wp-ipip-mobile-prefix-'.$comment->comment_ID.'" style="display: none; color:red">'.$location.'</div>';
+
+        return $wpipip_e.$wpipip_e_mobile.$comment_text;
     }
 
     if ('N/A' == $results) {
