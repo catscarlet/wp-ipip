@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.1
+
+- Fix an issue that may cause error messages show multiply times.
+
 ## 3.1.0
 
 You may get an unpredictable 403 Forbidden from IPIP.net, and any future request to IPIP.net will be blocked with mysterious reason. The entry is changed from 'window.open' to <a> link so that you can right-click and open it with Private-Browsing/Incognito-Mode.

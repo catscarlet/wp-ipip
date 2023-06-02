@@ -4,7 +4,7 @@
 Plugin Name: WP-IPIP
 Plugin URI: https://github.com/catscarlet/wp-ipip
 Description: 根据评论 IP 地址定位物理地址，使用 IPIP.net 数据库。
-Version: 3.1.0
+Version: 3.1.1
 Author: 石樱灯笼
 Author URI: https://www.catscarlet.com
 */
@@ -68,7 +68,6 @@ function wp_ipip($comment_text, $comment = null)
     $wpipip = '<div class="wp-ipip-comment" id="wp-ipip-prefix-'.$comment->comment_ID.'" style="display: none;"><a class="wp-ipip-link" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</a></div>';
 
     $wpipip_mobile = '<div class="wp-ipip-comment" id="wp-ipip-mobile-prefix-'.$comment->comment_ID.'" style="display: none;"><a class="wp-ipip-link" ip="'.$comment->comment_author_IP.'" title="点击跳转到 IPIP.net 查看 '.$comment->comment_author_IP.' 详情">地址: '.$info.'</a></div>';
-
 
     return $wpipip.$wpipip_mobile.$comment_text;
 }
